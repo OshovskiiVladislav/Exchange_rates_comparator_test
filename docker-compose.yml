@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  redis:
+    image: "redis"
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+  exchange-rate-comparator-app:
+    build:
+      context: .
+      dockerfile: exchange.Dockerfile
+    restart: unless-stopped
+    privileged: true
+    environment:
+      SPRING_REDIS_HOST: "redis"
+      SPRING_REDIS_PORT: "6379"
+    ports:
+      - 8080:8080
+    depends_on:
+      - redis
