@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 10000ms
+
+###giphy.com
+giphy:
+  url:
+    general: https://api.giphy.com/v1/gifs
+  api:
+    key: l5uDqsgMiSdJffpRgswI5kVTj6gFiYGT
+  rich: rich
+  broke: broke
+  zero: travolta
+  error: error
+
+###openexchangerates.org
+openexchangerates:
+  url:
+    general: https://openexchangerates.org/api
+  app:
+    id: b3dc01ae220447b08aef8f5d61bdedcf
+  base: USD
